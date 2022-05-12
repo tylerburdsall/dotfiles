@@ -32,6 +32,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 " Language-specific plugins
 
 " JavaScript
@@ -44,7 +45,6 @@ Plug 'rust-lang/rust.vim'
 
 " Python
 Plug 'nvie/vim-flake8'
-Plug 'psf/black', { 'branch': 'stable' }
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
@@ -59,6 +59,8 @@ let g:airline#extensions#tabline#enabled = 1
 " truncate branch names in Airline
 let g:airline#extensions#branch#format = 2
 let g:airline#extensions#branch#displayed_head_limit = 20
+let g:airline#extensions#tabline#fnamemod = ':t'  " Show just the filename
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
 " only display file encoding if it is not `utf-8[unix]`
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
@@ -116,6 +118,7 @@ set nu              " display line numbers
 set nowrap          " don't wrap display
 
 set laststatus=2
+set statusline+=%F
 set encoding=utf-8
 
 set showmatch       " show matching brackets
