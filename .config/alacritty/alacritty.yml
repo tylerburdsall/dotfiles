@@ -54,23 +54,23 @@ scrolling:
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Fira Code
-    style: Light # Alacritty is weird with how it renders Fira Code, Regular looks way too thick
+    family: Hack Nerd Font
+    style: Regular
 
   # The bold font face
   bold:
-    family: Fira Code
-    style: Regular
+    family: Hack Nerd Font
+    style: Bold
 
   # The italic font face
   italic:
-    family: Fira Code
-    style: Light Italic
+    family: Hack Nerd Font
+    style: Regular Italic
 
   # The bold italic font face
   bold_italic:
-    family: Fira Code
-    style: Regular Italic
+    family: Hack Nerd Font
+    style: Bold Italic
   # Point size of the font
   size: 14.0
 
@@ -138,8 +138,8 @@ shell:
   program: /bin/zsh
   args:
     - --login
-    - -c
-    - "tmux attach || tmux"
+      #- -c
+      #- "tmux attach || tmux"
 
 key_bindings:
   - { key: V, mods: Command, action: Paste         }
@@ -149,6 +149,7 @@ key_bindings:
   - { key: D, mods: Command|Shift, chars: "\x02\x2d" }
   - { key: W, mods: Command, chars: "\x02\x78" }
   - { key: Left, mods: Alt, chars: "\x1b\x62" }
+  - { key: Right, mods: Alt, chars: "\x1b\x66" }
   - { key: Right, mods: Alt, chars: "\x1b\x66" }
 
 

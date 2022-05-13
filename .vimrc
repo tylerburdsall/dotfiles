@@ -32,6 +32,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'zivyangll/git-blame.vim'
 Plug 'ryanoasis/vim-devicons'
 " Language-specific plugins
 
@@ -150,6 +151,14 @@ set mouse=a         " enable use of mouse
 " theme settings
 set t_Co=256
 set background=dark
+" You might have to force true color when using regular vim inside tmux as the
+" colorscheme can appear to be grayscale with "termguicolors" option enabled.
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
+set termguicolors
 colorscheme onedark
 
 "" Git
@@ -213,6 +222,10 @@ set pastetoggle=<F2>
 
 " close vim if nerdtree is the only window left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" open nerdtree at startup
+autocmd vimenter * NERDTree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:stdn_in") | NERDTree | endif
 
 
 " Map Ctrl+n to show NERDTree
@@ -220,13 +233,6 @@ nmap <C-n> :NERDTreeToggle<CR>
 
 " Map CtrlP to FZF
 nnoremap <C-p> :FZF<CR>
-
-
-" rxvt / tmux settings
-if &term == 'rxvt-unicode-256color' || &term == 'screen-256color'
-  let &t_SI = "\<Esc>[5 q"
-  let &t_EI = "\<Esc>[1 q"
-endif
 
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\e[5 q\<Esc>\\"
