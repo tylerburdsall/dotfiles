@@ -53,6 +53,12 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 " vim-airline settings
+"
+" let buffers be clickable
+let g:lightline#bufferline#clickable=1
+let g:lightline#bfferline#shorten_path=1
+let g:lightline#bufferline#min_buffer_count=1
+" colors
 let g:airline_powerline_fonts = 1
 let g:airline_theme="base16_snazzy"
 let g:airline#extensions#ale#enabled = 1
