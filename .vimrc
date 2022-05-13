@@ -14,6 +14,7 @@ endif
 
 set modelines=0   " Modelines are a security hazard"
 filetype indent plugin on
+set backspace=indent,eol,start  " reasonable backspace in insert mode
 
 autocmd BufNewFile,BufRead *.rs set filetype=rust
 
@@ -32,6 +33,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+"Plug 'itchyny/lightline.vim'
 Plug 'zivyangll/git-blame.vim'
 Plug 'ryanoasis/vim-devicons'
 " Language-specific plugins
@@ -52,12 +54,24 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
 
-" vim-airline settings
-"
+" lightline settings
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'FugitiveHead'
+      \ },
+      \ }
 " let buffers be clickable
 let g:lightline#bufferline#clickable=1
 let g:lightline#bfferline#shorten_path=1
 let g:lightline#bufferline#min_buffer_count=1
+
+
+" vim-airline settings
 " colors
 let g:airline_powerline_fonts = 1
 let g:airline_theme="base16_snazzy"
