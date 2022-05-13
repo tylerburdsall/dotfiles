@@ -34,7 +34,7 @@ Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "Plug 'itchyny/lightline.vim'
-Plug 'zivyangll/git-blame.vim'
+Plug 'APZelos/blamer.nvim'
 Plug 'ryanoasis/vim-devicons'
 " Language-specific plugins
 
@@ -119,6 +119,11 @@ nnoremap <silent>gd :ALEGoToDefinition<CR>
 inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
+
+
+" Git blamer
+let g:blamer_enabled = 1
+let g:blamer_delay = 200
 
 
 
