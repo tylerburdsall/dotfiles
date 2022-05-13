@@ -138,8 +138,8 @@ shell:
   program: /bin/zsh
   args:
     - --login
-      #- -c
-      #- "tmux attach || tmux"
+    - -c
+    - "tmux attach || tmux"
 
 key_bindings:
   - { key: V, mods: Command, action: Paste         }
