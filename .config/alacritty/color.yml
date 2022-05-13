@@ -1,6 +1,13 @@
 # alacritty color scheme
 
 schemes:
+  # If you have a Mac with a Pro XDR display then it will use the P3 color
+  # scheme (instead of sRGB like these themes assume you're using). Thus we have
+  # to have a slightly different color scheme.
+  #
+  # You can easily replicate this by using your desired theme in iTerm2 (which
+  # will perform the conversions for you) and then copying those slightly
+  # modified values over
   snazzy_p3: &snazzy_p3
     primary:
       background: '#282a35'
