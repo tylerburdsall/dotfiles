@@ -33,8 +33,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'dense-analysis/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'zivyangll/git-blame.vim'
 "Plug 'itchyny/lightline.vim'
-Plug 'APZelos/blamer.nvim'
 Plug 'ryanoasis/vim-devicons'
 " Language-specific plugins
 
@@ -51,6 +51,9 @@ Plug 'nvie/vim-flake8'
 
 " Go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" Markdown
+Plug 'preservim/vim-markdown'
 
 call plug#end()
 
@@ -121,12 +124,6 @@ inoremap <silent><expr> <Tab>
 inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
 
 
-" Git blamer
-let g:blamer_enabled = 1
-let g:blamer_delay = 200
-
-
-
 " Formatting
 set expandtab       " expand tabs to spaces
 set tabstop=2       " tab width
@@ -146,6 +143,8 @@ set nowrap          " don't wrap display
 set laststatus=2
 set statusline+=%F
 set encoding=utf-8
+" Show trailing whitepace and spaces before a tab:
+autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 set showmatch       " show matching brackets
 set showcmd         " show (partial) comand in status line
