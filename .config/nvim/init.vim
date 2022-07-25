@@ -1,3 +1,19 @@
+set runtimepath^=~/.vim runtimepath+=~/.vim/after
+let &packpath = &runtimepath
+
+let g:coc_global_extensions = [
+      \'coc-markdownlint',
+      \'coc-highlight',
+      \'coc-go',
+      \'coc-pyright',
+      \'coc-explorer',
+      \'coc-rust-analyzer',
+      \'coc-json',
+      \'coc-git',
+      \'coc-tsserver',
+      \'coc-eslint',
+      \'coc-solargraph'
+      \]
 if has('vim_starting')
   set nocompatible               " Be iMproved
 endif
@@ -263,6 +279,9 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " delays and poor user experience.
 set updatetime=300
 
+" redraw screan and clear search highlighted items
+"http://stackoverflow.com/questions/657447/vim-clear-last-search-highlighting#answer-25569434
+nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
