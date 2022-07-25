@@ -58,6 +58,8 @@ Plug 'preservim/vim-markdown'
 
 call plug#end()
 
+let mapleader=","   " set <Leader> to ',' for easier reach
+
 " lightline settings
 let g:lightline = {
       \ 'colorscheme': 'one',
@@ -346,7 +348,6 @@ noremap <Leader>gl :Git log<CR
 let g:rainbow_active = 1
 
 " nerdcommenter settings
-let mapleader=","   " set <Leader> to ',' for easier reach
 set timeout timeoutlen=1500
 let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
