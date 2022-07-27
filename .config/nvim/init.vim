@@ -53,6 +53,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'zivyangll/git-blame.vim'
 "Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'psf/black', { 'branch': 'main' }
 " Language-specific plugins
 
 " JavaScript
@@ -110,41 +111,6 @@ let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline_base16_improved_contrast = 1 " make inactive statusline stand out a bit more"
 
 
-" Ale
-"set completeopt=menu,menuone,preview,noselect,noinsert
-"let g:ale_completion_enabled = 1
-
-" Set this variable to 1 to fix files when you save them.
-"let g:ale_fix_on_save = 1
-"set omnifunc=ale#completion#OmniFunc
-" let g:rustfmt_autosave = 1
-"
-" let js_fixers = ['prettier', 'eslint']
-"
-" let g:ale_fixers = {
-"       \ 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'],
-"       \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-"       \ 'javascript': js_fixers,
-"       \ 'javascript.jsx': js_fixers,
-"       \ 'typescript': js_fixers,
-"       \ 'typescriptreact': js_fixers,
-"       \ 'css': ['prettier'],
-"       \ 'json': ['prettier'],
-"       \ 'python': ['black'],
-"       \ }
-"
-" nnoremap K :ALEHover<CR>
-" nnoremap <silent>gr :ALEFindReferences<CR>
-" nnoremap <leader>rn :ALERename<CR>
-" nnoremap <leader>qf :ALECodeAction<CR>
-" nnoremap <silent>gd :ALEGoToDefinition<CR>
-" inoremap <silent><expr> <Tab>
-"       \ pumvisible() ? "\<C-n>" : "\<TAB>"
-" inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ CheckBackspace() ? "\<TAB>" :
@@ -288,13 +254,13 @@ set shortmess+=c
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
-if has("nvim-0.5.0") || has("patch-8.1.1564")
-  " Recently vim can merge signcolumn and number column into one
-  set signcolumn=number
-else
-  set signcolumn=yes
-endif
-
+" if has("nvim-0.5.0") || has("patch-8.1.1564")
+"   " Recently vim can merge signcolumn and number column into one
+"   set signcolumn=number
+" else
+"   set signcolumn=yes
+" endif
+"
 " Give more space for displaying messages.
 set cmdheight=2
 " Formatting
@@ -415,6 +381,7 @@ set hidden
 set nobackup
 set noswapfile
 set pastetoggle=<F2>
+let g:vim_markdown_folding_disabled=1
 
 " close vim if nerdtree is the only window left open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
