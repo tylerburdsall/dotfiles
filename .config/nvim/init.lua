@@ -13,4 +13,3 @@ require('plugins/nvim-treesitter')
 require('plugins/alpha-nvim')
 require('plugins/barbar')
 require('plugins/gitsigns')
-
