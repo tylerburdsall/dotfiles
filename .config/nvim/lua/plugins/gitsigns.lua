@@ -39,3 +39,7 @@ require('gitsigns').setup {
     enable = false
   },
 }
+
+local map = vim.api.nvim_set_keymap
+local opts = { noremap = true, silent = true }
+map('n', '<leader>gb', '<Cmd>Gitsigns toggle_current_line_blame<cr>', opts)
