@@ -49,7 +49,7 @@ autocmd('Filetype', {
 })
 
 -- Terminal settings:
--- Open a Terminal on the right tab
+-- Open a Terminal on the bottom
 autocmd('CmdlineEnter', {
   command = 'command! Term :botright split term://$SHELL'
 })
