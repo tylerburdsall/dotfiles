@@ -72,6 +72,7 @@ return packer.startup(function(use)
   use 'nvim-treesitter/nvim-treesitter'
 
   -- Color schemes
+  use 'marko-cerovac/material.nvim'
   use 'navarasu/onedark.nvim'
   use 'tanvirtin/monokai.nvim'
   use { 'rose-pine/neovim', as = 'rose-pine' }
@@ -93,8 +94,8 @@ return packer.startup(function(use)
 
   -- Statusline
   use {
-    'feline-nvim/feline.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+   'nvim-lualine/lualine.nvim',
+   requires = { 'kyazdani42/nvim-web-devicons' }
   }
 
   -- git labels
