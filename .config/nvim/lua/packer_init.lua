@@ -103,6 +103,13 @@ return packer.startup(function(use)
     end
   }
 
+  -- Telescope
+  use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  requires = { {'nvim-lua/plenary.nvim'} }
+  }
+
+  -- nvim-web-devicons
   use {
   'romgrk/barbar.nvim',
   requires = {'kyazdani42/nvim-web-devicons'}
