@@ -65,6 +65,9 @@ return packer.startup(function(use)
   -- Tag viewer
   use 'preservim/tagbar'
 
+  -- Rainbow brackets
+  use 'p00f/nvim-ts-rainbow'
+
   -- Treesitter interface
   use 'nvim-treesitter/nvim-treesitter'
 
