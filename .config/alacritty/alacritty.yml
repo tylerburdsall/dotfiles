@@ -165,6 +165,7 @@ key_bindings:
   - { key: Comma, mods: Alt|Shift, chars: "\e<" }
   - { key: P, mods: Control, chars: "\x10"}
   - { key: K, mods: Control, chars: "\x0b"}
+  - { key: R, mods: Control, chars: "\x0a"}
 
 
 # Send ESC (\x1b) before characters when alt is pressed.
