@@ -44,7 +44,7 @@ map('n', '<C-k>', '<C-w>k')
 map('n', '<C-l>', '<C-w>l')
 
 -- Reload configuration without restart nvim
-map('n', '<leader>rr', ':source $MYVIMRC<CR>')
+map('n', '<C-r>', ':source $MYVIMRC<CR>')
 
 -- Fast saving with <leader> and s
 map('n', '<leader>s', ':w<CR>')
