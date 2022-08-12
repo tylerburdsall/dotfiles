@@ -27,7 +27,7 @@ map('', '<right>', '<nop>')
 map('i', 'kk', '<Esc>')
 
 -- Clear search highlighting with <leader> and c
-map('n', '<leader>c', ':nohl<CR>')
+map('n', '<Esc><Esc>', ':nohl<CR>')
 
 -- Toggle auto-indenting for code paste
 map('n', '<F2>', ':set invpaste paste?<CR>')
